@@ -1,0 +1,12 @@
+Package: postregplots
+Type: Package
+Title: Making plots after regression models 
+Version: 0.1.0
+Author: Chong Chen
+Maintainer: Chong Chen <chong.chen@duke.edu>
+Description: Users can make coefficient plot, post-estimating plots including
+    density plots from simulation
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
