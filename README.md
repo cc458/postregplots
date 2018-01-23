@@ -1,2 +1,2 @@
 # postregplots
-This a set of plotting functions I wrote for my prelim paper mostly using simulation to plot post-estimating quantity
+This is a set of plotting functions I wrote for my prelim paper mostly using simulations to plot post-estimating quantities.
