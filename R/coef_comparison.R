@@ -13,8 +13,6 @@
 #' ggplot2 tidyr stringr purrr
 #' @export
 
-
-
 coef_comparison = function(ModelResults,n.sim = 1000, varname, data,
                            val1, val2, clusterid){
        require(arm)
@@ -58,7 +56,7 @@ coef_comparison = function(ModelResults,n.sim = 1000, varname, data,
        names(df_plot)[1] <- "value"
 
 
-       p =    ggplot(df_plot, aes(x = value, y = id)) +
+       p =    ggplot(df_plot, aes(x = value, y = id, height=..density.., fill = id)) +
               geom_density_ridges(col = "grey70", scale = .8, show.legend = F) +
               scale_fill_viridis(discrete = TRUE) +
               geom_vline(xintercept = 0, colour = gray(1/2), lty = 2) +
@@ -67,3 +65,4 @@ coef_comparison = function(ModelResults,n.sim = 1000, varname, data,
        return(p)
 
 }
+
