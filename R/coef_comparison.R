@@ -1,7 +1,6 @@
 #' A function to plot first difference for the same variable across Logit model with cluster sd .
 #'
 #' This function creates a ridge density plot for variables in Logit model using simulations
-#'
 #' @param ModelResults list. Specify model name of the logit model.
 #' @param n.sim numeric. Specify the number of simulations
 #' @param varname character vector. A vector contains the name of variables
