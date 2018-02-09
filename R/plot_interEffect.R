@@ -20,7 +20,7 @@
 
 
 plot_interEffect = function(ModelResults, n.sim = 1000, data, clusterid, varname1, varname2,
-                       val1, val2, intervals, label = c("lab1", "lab2"), xlabs, ylabs){
+                            val1, val2, intervals, label = c("lab1", "lab2"), xlabs, ylabs, facet = F){
        #get a sim objective
        require(arm)
        library(multiwayvcov)
@@ -68,7 +68,30 @@ plot_interEffect = function(ModelResults, n.sim = 1000, data, clusterid, varname
        df_p$type <- as.factor(df_p$type)
        levels(df_p$type) <- label
 
-       p =   ggplot(df_p, aes(x=X, y=mean)) + theme_gray() +
+       if(facet == F){
+              p =   ggplot(df_p, aes(x=X, y=mean, group = type, color = type, linetype=type)) +
+                     theme_gray() +
+                     geom_ribbon(aes(ymin = lo, ymax = hi), alpha=.2, color = NA) +
+                     geom_line(aes(y = mean, x = X), size = 0.5, alpha = 0.75) +
+                     ylab(ylabs) +
+                     scale_color_manual( "", labels= label,
+                                         values=c("#2c7bb6","#d7191c")
+                     ) +
+                     scale_linetype_manual("",
+                                           labels=label,
+                                           values=c(1,2)) +
+                     scale_x_continuous(name = xlabs, breaks = seq(val1, val2, by = 2)) +
+                     theme(axis.title.y = element_text(vjust=1,size=12),
+                           axis.title.x = element_blank(),
+                           legend.position="bottom",
+                           legend.margin=margin(0,0,0,0),
+                           legend.text=element_text(size=12),
+                           axis.text.y=element_text(size=12),
+                           axis.title=element_text(size=14),
+                           axis.text.x=element_text(size=12),
+                           plot.margin=unit(c(0.1,0.1,0.1,0.1),"cm"))
+              return(p)}
+       else { p =   ggplot(df_p, aes(x=X, y=mean)) + theme_gray() +
               geom_ribbon(aes(x = X, ymin = lo, ymax = hi), alpha=.4) +
               stat_smooth(color = "#2c7bb6") + facet_wrap(~type, scales = "free_y") +
               scale_x_continuous(name = xlabs, breaks = seq(val1, val2, by = 2)) +
@@ -78,5 +101,7 @@ plot_interEffect = function(ModelResults, n.sim = 1000, data, clusterid, varname
                     axis.title=element_text(size=14),
                     strip.text = element_text(size=15))
        return(p)
+       }
 
 }
+
