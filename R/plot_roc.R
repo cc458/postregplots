@@ -34,8 +34,9 @@ plot_roc <- function(ModelResults,linetypes = c("solid", "dotted"), interval){
 
        breaks = seq(0, 1, interval)
 
-       p = ggplot(roc_df, aes(x = plotx, y = ploty)) +
-              geom_line(aes(linetype = name)) +
+       p = ggplot(roc_df, aes(x = plotx, y = ploty, color = name, linetype = name)) +
+              geom_line() +
+              scale_colour_discrete("") +
               scale_linetype_manual(name = '',
                                     values=linetypes) +
               geom_segment(aes(x = 0, y = 0, xend = 1, yend = 1), alpha = 0.5) +
