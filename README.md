@@ -3,10 +3,12 @@
 *postregplots* implements a set of functions for visualizing simulation-based marginal effects from generalized linear models.
 
 Compare simulation-based marginal effects for different variables across different models. 
+-----
 
 <img src = "man/Fig6-b.jpg" style = "display: block; margina: auto;"> 
 
 Compare simulation-based marginal effects for the same variable across different models. 
+-----
 
 <img src = "man/Fig4.png" style = "display: block; margina: auto;"> 
 
