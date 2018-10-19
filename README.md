@@ -2,7 +2,7 @@
 
 *postregplots* implements a set of functions for visualizing simulation-based marginal effects from generalized linear models.
 
-<img src = "man/Fig3.png" style = "display: block; margina: auto;"> 
+<img src = "man/Fig6-b.jpg" style = "display: block; margina: auto;"> 
 
 <img src = "man/Fig4.png" style = "display: block; margina: auto;"> 
 
