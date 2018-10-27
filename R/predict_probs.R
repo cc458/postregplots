@@ -1,5 +1,5 @@
 #function for predicted probs
-predict_probs <- function (ModelResults, n.sim = 1000, varname, data, val1 = 0, 
+predict_probs <- function (ModelResults, n.sim = 1000, varname, data, val1 = 0,
          val2 = 1,intervals, clusterid){
               library(arm)
               library(multiwayvcov)
@@ -17,7 +17,7 @@ predict_probs <- function (ModelResults, n.sim = 1000, varname, data, val1 = 0,
 sim_b1 <- sim_cluster(ModelResults, n.sim, data = data, clusterid)
 
 varname_val = seq(val1, val2, by = intervals)
-df <- array(NA, c(length(varname2_val), 4))
+df <- array(NA, c(length(varname_val), 4))
 
 
 for (i in 1:length(varname_val)){
