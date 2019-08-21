@@ -2,9 +2,9 @@
 
 **postregplots** implements a set of functions for visualizing simulation-based marginal effects from generalized linear models. It provides various ways to compute clustered SEs, hence linking R with Stata estimates in the same framework. At this point, **postregplots** can deal with the following models: 
 
-+ Linear models (OLS)
++ Linear models (lm)
 
-+ Logit models
++ Logit models (glm)
 
 + Multilevel models (lmer4)
 
