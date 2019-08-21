@@ -1,6 +1,17 @@
-#postregplots: An R Package for Visualizing Simulation-based Marginal Effects from Generalized Linear Models
+#**postregplots**: An **R** Package for Visualizing Simulation-based Marginal Effects from Generalized Linear Models
 
-*postregplots* implements a set of functions for visualizing simulation-based marginal effects from generalized linear models.
+**postregplots** implements a set of functions for visualizing simulation-based marginal effects from generalized linear models. It provides various ways to compute clustered SEs, hence linking R with Stata estimates in the same framework. At this point, **postregplots** can deal with the following models: 
+
++ Linear models (OLS)
+
++ Logit models
+
++ Multilevel models (lmer4)
+
++ Multinomial models (vglm)
+
+For the observed-value approach to marginal effects, see Hanmer, Michael J., and Kerem Ozan Kalkan. "Behind the curve: Clarifying the best approach to calculating predicted probabilities and marginal effects from limited dependent variable models." *American Journal of Political Science* 57.1 (2013): 263-277.
+
 
 Compare simulation-based marginal effects for different variables across different models. 
 -----
